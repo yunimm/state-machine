@@ -1,12 +1,12 @@
 import Fetch from './Fetch';
 import Toggler from './Toggler';
-import FetchUser from './FetchUser';
+import FetchDog from './FetchDog';
 
 function App() {
     return (
         <>
           {/* <Fetch /> */}
-          <FetchUser />
+          <FetchDog />
           {/* <Toggler /> */}
         </>
     );
