@@ -1,50 +1,27 @@
-import React, { useState } from 'react';
-import Fetch from './Fetch';
-import Toggler from './Toggler';
-import FetchDog from './FetchDog';
-import RetryPromise from './RetryPromise';
-import { Select, SelectItem } from "@nextui-org/react";
-
-const machines = [
-  { key: "Toggler", label: "Toggler" },
-  { key: "fetch", label: "fetch" },
-  { key: "FetchDog", label: "FetchDog" },
-  { key: "RetryPromise", label: "RetryPromise" },
-];
+import Header from './components/Header';
+import SidebarColumn from './components/SidebarColumn';
+import NavigationColumn from './components/NavigationColumn';
+import ContentColumn from './components/ContentColumn';
 
 function App() {
-  const [selectedMachine, setSelectedMachine] = useState(machines[0].key);
-
-  const renderComponent = () => {
-    switch (selectedMachine) {
-      case 'Toggler':
-        return <Toggler />;
-      case 'fetch':
-        return <Fetch />;
-      case 'FetchDog':
-        return <FetchDog />;
-      case 'RetryPromise':
-        return <RetryPromise />;
-      default:
-        return null;
-    }
-  };
   return (
-    // FIXME: 預設 label 顯示 toggler
     <>
-      <Select
-        label="Select an machine"
-        className="max-w-xs"
-        onChange={(e) => setSelectedMachine(e.target.value)}
-      >
-        {machines.map((machine) => (
-          <SelectItem key={machine.key}>
-            {machine.label}
-          </SelectItem>
-        ))}
-      </Select>
-      <br />
-      {renderComponent()}
+      <div className="flex flex-col min-h-screen bg-gray-900 text-gray-100">
+        <header className="w-full bg-gray-800 border-b border-gray-700">
+          <Header />
+        </header>
+        <div className="flex flex-grow">
+          <aside className="hidden md:block w-64 bg-gray-800 overflow-y-auto">
+            <NavigationColumn target="Lorem Ipsum 1" />
+          </aside>
+          <main className="flex-grow p-8 overflow-y-auto">
+            <ContentColumn />
+          </main>
+          <aside className="hidden lg:block w-64 p-4 bg-gray-800 overflow-y-auto">
+            <SidebarColumn />
+          </aside>
+        </div>
+      </div>
     </>
   );
 }
