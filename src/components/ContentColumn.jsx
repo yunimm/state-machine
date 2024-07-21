@@ -1,6 +1,6 @@
 import { useNavigation } from '../context/NavigationContext';
-import Toggler from '../Toggler';
-import RetryPromise from '../RetryPromise';
+import Toggler from './Toggler';
+import RetryPromise from './RetryPromise';
 
 export default function ContentColumn() {
   const { activeItem } = useNavigation();
