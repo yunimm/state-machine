@@ -96,16 +96,23 @@ export default function App() {
     });
   }, [send]);
 
+  const renderContent = () => {
+    if (current.value === 'success') {
+      return <img style={imgStyle} src={current.context.response.message} />;
+    } else if (current.context.retries === 3) {
+      return <span>fail</span>;
+    } else {
+      return <span>Fetching...</span>;
+    }
+  };
+
 
   return (
     <>
       <span>模擬RetryPromise</span>
       <p>retries: {current.context.retries}</p>
       <p>status:{current.value}</p>
-      {current.value === 'success' ?
-        <img style={imgStyle} src={current.context.response.message}
-        /> : <span>Fetching...</span>
-      }
+      {renderContent()}
     </>
   )
 }
