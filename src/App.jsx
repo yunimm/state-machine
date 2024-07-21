@@ -16,7 +16,7 @@ function App() {
           <aside className="hidden md:block w-64 bg-gray-800 overflow-y-auto">
             <NavigationColumn target="Lorem Ipsum 1" />
           </aside>
-          <main className="flex-grow p-8 overflow-y-auto">
+          <main className="flex-grow p-8 overflow-y-auto flex-col flex items-center">
             <ContentColumn />
           </main>
           <aside className="hidden lg:block w-64 p-4 bg-gray-800 overflow-y-auto">

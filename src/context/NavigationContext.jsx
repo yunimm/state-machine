@@ -8,8 +8,6 @@ export const NavigationProvider = ({ children }) => {
   const [activeItem, setActiveItem] = useState("Basics-toggle");
 
   const changeActiveItem = useCallback((newItem) => {
-    // 這裡可以添加任何額外的邏輯，例如驗證或日誌記錄
-    console.log(`Changing active item from ${activeItem} to ${newItem}`);
     setActiveItem(newItem);
   }, [activeItem]);
 

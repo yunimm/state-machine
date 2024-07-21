@@ -64,7 +64,6 @@ export default function NavigationColumn() {
 
   return (
     <>
-      <h2>Current Active Item: {activeItem}</h2>
       <SidebarList
         sections={sidebarData}
         activeItem={activeItem}
