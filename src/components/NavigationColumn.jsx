@@ -11,7 +11,7 @@ const ListItem = ({ text, isActive, onClick }) => (
 
 // Section 組件
 const Section = ({ title, items, activeItem, onItemClick }) => (
-  <li className="mb-6">
+  <li className="mb-6 cursor-pointer">
     <h3 className="text-white font-semibold mb-2">{title}</h3>
     <ul className="space-y-2 ml-2">
       {items.map((item, index) => (
