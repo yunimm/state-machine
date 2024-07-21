@@ -1,5 +1,4 @@
-import { useState } from 'react';
-
+import { useNavigation } from '../context/NavigationContext';
 // ListItem 組件
 const ListItem = ({ text, isActive, onClick }) => (
   <li
@@ -46,10 +45,10 @@ const SidebarList = ({ sections, activeItem, onItemClick }) => (
 );
 
 export default function NavigationColumn() {
-  const [activeItem, setActiveItem] = useState("Basics-toggle");
+  const { activeItem, changeActiveItem } = useNavigation();
 
   const handleItemClick = (item) => {
-    setActiveItem(item);
+    changeActiveItem(item);
   };
 
   const sidebarData = [
@@ -65,6 +64,7 @@ export default function NavigationColumn() {
 
   return (
     <>
+      <h2>Current Active Item: {activeItem}</h2>
       <SidebarList
         sections={sidebarData}
         activeItem={activeItem}

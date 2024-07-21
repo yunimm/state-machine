@@ -1,11 +1,13 @@
+import { NavigationProvider } from './context/NavigationContext';
 import Header from './components/Header';
 import SidebarColumn from './components/SidebarColumn';
 import NavigationColumn from './components/NavigationColumn';
 import ContentColumn from './components/ContentColumn';
 
+
 function App() {
   return (
-    <>
+    <NavigationProvider>
       <div className="flex flex-col min-h-screen bg-gray-900 text-gray-100">
         <header className="w-full bg-gray-800 border-b border-gray-700">
           <Header />
@@ -22,7 +24,7 @@ function App() {
           </aside>
         </div>
       </div>
-    </>
+    </NavigationProvider>
   );
 }
 
