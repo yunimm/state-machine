@@ -58,7 +58,7 @@ export default function NavigationColumn() {
     },
     {
       title: "Fetch",
-      items: ["RetryPromise"]
+      items: ["RetryPromise", "Cache"]
     },
   ];
 

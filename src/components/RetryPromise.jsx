@@ -48,7 +48,13 @@ const machine = setup({
         onDone: [
           {
             target: 'success',
-            actions: assign({ response: ({ event }) => event.output }),
+            // actions: assign({ response: ({ event }) => event.output }),
+            actions: assign({
+              response: ({ event }) => {
+                console.log({ event });
+                event.output
+              }
+            }),
           },
         ],
         onError: [
